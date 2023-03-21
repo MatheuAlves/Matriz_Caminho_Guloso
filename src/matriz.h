@@ -15,7 +15,8 @@ class Matriz {
         ~Matriz();
         void lerMatriz(ifstream& arquivo, int tamanho);
         void imprimirMatriz();
-        void caminharMatriz();
+        int caminharMatriz();
+        void imprimirSoma(int soma);
     };
     
 #endif

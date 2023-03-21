@@ -39,6 +39,8 @@ Matriz::~Matriz() {}
 void Matriz::lerMatriz(ifstream& arquivo, int tamanho) 
 {   
     int linha = 0;
+    int somaTotal= 0;
+
     while (!arquivo.eof())
     {
         int i = linha;
@@ -54,11 +56,12 @@ void Matriz::lerMatriz(ifstream& arquivo, int tamanho)
         {
             // Imprimir a matriz
             imprimirMatriz();
-            // Caminhar pela matriz
-            caminharMatriz();
+
+            // Caminhar pela matriz e somar total
+            somaTotal = caminharMatriz() + somaTotal;
         }
-        
     }
+    imprimirSoma(somaTotal);
 }
 
 // Função para imprimir a matriz
@@ -80,7 +83,7 @@ void Matriz::imprimirMatriz()
 }
 
 // Função para caminhar pela matriz
-void Matriz::caminharMatriz() 
+int Matriz::caminharMatriz() 
 {
 
     // Criar matriz auxiliar para representar o caminho percorrido
@@ -111,6 +114,7 @@ void Matriz::caminharMatriz()
         int next_j = j+1;
         cout << matriz[i][j] << "-";
 
+        // Verificar se é a ultima linha
         if (i == tam-1)
         {
             j++;
@@ -216,4 +220,11 @@ void Matriz::caminharMatriz()
     cout << "soma = "; 
     cout << soma << endl;
     cout << "##############################################################" << endl;
+
+    return soma;
 }
+
+// Imprime soma final
+void Matriz::imprimirSoma(int soma) {
+    cout << "A Soma total é:" << soma << endl;
+} 
