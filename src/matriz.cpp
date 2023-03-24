@@ -110,8 +110,8 @@ int Matriz::caminharMatriz()
         // Marcar posição atual com '#'
         caminho[i][j] = '#';
         int max_valor = -1;
-        int next_i = i;
-        int next_j = j+1;
+        int prox_i = i;
+        int prox_j = j+1;
         cout << matriz[i][j] << "-";
 
         // Verificar se é a ultima linha
@@ -127,8 +127,8 @@ int Matriz::caminharMatriz()
                 if (matriz[i][j+1] > max_valor) 
                 {
                     max_valor = matriz[i][j+1];
-                    next_i = i;
-                    next_j = j+1;
+                    prox_i = i;
+                    prox_j = j+1;
                 }
             }
 
@@ -138,8 +138,8 @@ int Matriz::caminharMatriz()
                 if (matriz[i+1][j] > max_valor) 
                 {
                     max_valor = matriz[i+1][j];
-                    next_i = i+1;
-                    next_j = j;
+                    prox_i = i+1;
+                    prox_j = j;
                 }
             }
 
@@ -149,8 +149,8 @@ int Matriz::caminharMatriz()
                 if (matriz[i+1][j+1] > max_valor) 
                 {
                     max_valor = matriz[i+1][j+1];
-                    next_i = i+1;
-                    next_j = j+1;
+                    prox_i = i+1;
+                    prox_j = j+1;
                 }
             }
 
@@ -160,8 +160,8 @@ int Matriz::caminharMatriz()
                 if (matriz[i+1][j-1] > max_valor) 
                 {
                     max_valor = matriz[i+1][j-1];
-                    next_i = i+1;
-                    next_j = j-1;
+                    prox_i = i+1;
+                    prox_j = j-1;
                 }
             }
 
@@ -171,15 +171,15 @@ int Matriz::caminharMatriz()
                 if (matriz[i][j-1] > max_valor) 
                 {
                     max_valor = matriz[i][j-1];
-                    next_i = i;
-                    next_j = j-1;
+                    prox_i = i;
+                    prox_j = j-1;
                 }
             }
         }
 
         // Atualizar a posição atual para a posição com maior valor
-        i = next_i;
-        j = next_j;
+        i = prox_i;
+        j = prox_j;
     }
 
     // Imprimir ultimo elemento
@@ -217,7 +217,7 @@ int Matriz::caminharMatriz()
     cout << "##############################################################" << endl;
     cout << endl;
     cout << "##############################################################" << endl;
-    cout << "soma = "; 
+    cout << "soma da matriz = "; 
     cout << soma << endl;
     cout << "##############################################################" << endl;
 
@@ -226,5 +226,8 @@ int Matriz::caminharMatriz()
 
 // Imprime soma final
 void Matriz::imprimirSoma(int soma) {
-    cout << "A Soma total é:" << soma << endl;
+    cout << "##############################################################" << endl;
+    cout << "A Soma total é:"; 
+    cout << soma << endl;
+    cout << "##############################################################" << endl;
 } 
