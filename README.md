@@ -78,3 +78,33 @@ Nesse caso deve caminhar para a direita, para baixo, diagonal inferior direita, 
 <p align="center">
   <img src="img/imagemSomaTotal.png" width="150" title="Soma Total">
 </p>
+
+# Compilação e Execução
+<hr>
+<br>
+
+O algoritmo disponibilizado possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
+<br>
+<br>
+<body>
+    <table border="1px" align="center">
+        <tr >
+            <td align="center"><h3>Comando</h3></td>
+            <td align="center"><h3>Função</h3></td>
+        </tr>
+        <tr>
+            <td>make clean</td>
+            <td>Apaga a última compilação realizada contida na pasta build</td>
+        </tr>
+        <tr>
+            <td>make</td>
+            <td>Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build</td>
+        </tr>
+        <tr>
+            <td>make run</td>
+            <td>Executa o programa da pasta build após a realização da compilação</td>
+        </tr>
+    </table>
+</body>
+<br>
+<hr>
